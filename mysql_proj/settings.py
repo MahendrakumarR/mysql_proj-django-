@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'mysql_proj.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'mysql_curd',                              # here application name 
+        'NAME':'django',                              # here database  name i used django in wampserver 
         'USER':'root',
         'PASSWORD':'',
         'HOST':'127.0.0.1',
