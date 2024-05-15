@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mysql_curd import views           # import all data from the mysql_curd views.py
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name="home")     # here call home from the views.py mysql_curd application
 ]
