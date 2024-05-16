@@ -19,5 +19,6 @@ from mysql_curd import views           # import all data from the mysql_curd vie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home")     # here call home from the views.py mysql_curd application
+    path('', views.home, name="home"),     # here call home from the views.py mysql_curd application
+    path('insert/', views.insert),     # here call insert from the views.py mysql_curd application
 ]
