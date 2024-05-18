@@ -4,4 +4,4 @@ from .models import RegisterForm       # here import from models.py file
 class MyRegisterForm(forms.ModelForm):
     class Meta:
         model = RegisterForm
-        fields = ["name", "age", "address", "contacts", "email"]
+        fields = ["name", "age", "address", "contact", "email"]
