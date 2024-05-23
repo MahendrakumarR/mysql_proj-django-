@@ -1,10 +1,13 @@
 {% extends "index.html" %}   <!-- Here using extend used for all methods copy from index.html-->
 
 {% block content %}
+{% load crispy_forms_tags %}      <!-- Here using for design from bootstrap-->
 <div class="container-fluid" style="margin-top:50px;">
     <div class="col-md-offset-3 col-md-6">
         <h3 class="page-header text-primary text-center"><i class="fa fa-users"> Registration </i></h3>
-        {{form.as_p}}  <!--Here using as_p for Automaticaly align all fields-->
+        <!--{{form.as_p}} -->        <!--Here using .as_p for Automaticaly align all fields-->
+
+        {{form|crispy}}      <!--Here using for bootstrap4 design-->
     </div>
 </div>
 {% endblock %}
