@@ -18,6 +18,30 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            {% for mydata in data %}
+            <tbody>
+                <tr>
+                    <td>{{forloop.counter</td>
+                    <td>{{mydata.name}}</td>     <!-- Here using name from models.py file names -->
+                    <td>{{mydata.age}}</td>
+                    <td>{{mydata.address}}</td>
+                    <td>{{mydata.contact}}</td>
+                    <td>{{mydata.email}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
 
     </div>
 

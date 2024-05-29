@@ -1,8 +1,14 @@
 from django.shortcuts import render, redirect
 from .forms import MyRegisterForm
 from django.contrib import messages            # here using messages for below declaration
+from .models import RegisterForm               # import from models.py
 
 def home(request):
+    data = RegisterForm.objects.all()
+    if(data!=''):
+        return render(request,"home.html",{'data':data})
+    else:
+        return render(request,"home.html")
     return render(request, "home.html")
 
 def insert(request):
