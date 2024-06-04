@@ -24,4 +24,7 @@ def insert(request):
     else:
         form = MyRegisterForm()
     return render(request, "register.html", {'form':form})
+
+def update(request):
+    return render(request,"update.html")
 # Create your views here.
