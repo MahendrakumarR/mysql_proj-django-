@@ -4,7 +4,7 @@ from django.contrib import messages            # here using messages for below d
 from .models import RegisterForm               # import from models.py
 
 def home(request):
-    data = RegisterForm.objects.all()
+    data = RegisterForm.objects.all()         # here collect all data from models.py 
     if(data!=''):
         return render(request,"home.html",{'data':data})
     else:
@@ -25,6 +25,7 @@ def insert(request):
         form = MyRegisterForm()
     return render(request, "register.html", {'form':form})
 
-def update(request):
-    return render(request,"update.html")
+def update(request,id):
+    data = RegisterForm.objects.get(id=id)     # here get only the id 
+    return render(request,"update.html", {'data':data})
 # Create your views here.
