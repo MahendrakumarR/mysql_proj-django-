@@ -27,5 +27,26 @@ def insert(request):
 
 def update(request,id):
     data = RegisterForm.objects.get(id=id)     # here get only the id 
+    if request.method=='POST':
+        name = request.POST['name']
+        age = request.POST['age']
+        address = request.POST['address']
+        contact = request.POST['contact']
+        email = request.POST['email']
+
+        data.name = name
+        data.age = age
+        data.address = address
+        data.contact = contact
+        data.email = email
+        data.save()
+        messages.success(request,"Update Successfully Completed")
+        return redirect("home")
     return render(request,"update.html", {'data':data})
+
+def delete(request,id):
+    data = RegisterForm.objects.get(id=id)
+    data.delete()
+    messages.error(request,"Delete Successfully Completed")
+    return redirect('home')
 # Create your views here.

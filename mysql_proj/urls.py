@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.home, name="home"),     # here call home from the views.py mysql_curd application
     path('insert/', views.insert),         # here call insert from the views.py mysql_curd application
     path('update/<int:id>',views.update), 
+    path('delete/<int:id>',views.delete),
 ]
