@@ -14,7 +14,15 @@
             }
         </style>
 
-        <a class="btn btn-success btn-block" href="insert/">Insert</a><br>
+        <div class="col-md-6 pull-right">
+            <table class="table">
+                <tr>
+                    <th><input type="text" name="search" id="search" placeholder="search" class="form-control"></th>
+                    <th><a class="btn btn-success btn-block" href="insert/">Insert</a></th>
+                </tr>
+            </table>
+        </div>
+
         {% if messages %}
             {% for message in messages %}
                 {% if message.tags == 'error' %}
@@ -42,7 +50,7 @@
                 </tr>
             </thead>
             {% for mydata in data %}
-            <tbody>
+            <tbody id="mytable">
                 <tr>
                     <td>{{forloop.counter}}</td>
                     <td>{{mydata.name}}</td>     <!-- Here using name from models.py file names -->
@@ -60,4 +68,17 @@
     </div>
 
 </div>
+
+<script>                                   // here using jquery code for searching text to show web page
+    $("document").ready(function(){
+        $('#search').keyup(function(){
+            var value=$(this).val().toLowerCase()
+            $("#mytable tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(Value)>-1);
+            });
+
+        });
+    });
+</script>
+
 {% endblock %}
