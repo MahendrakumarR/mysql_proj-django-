@@ -69,12 +69,12 @@
 
 </div>
 
-<script>                                   // here using jquery code for searching text to show web page
+<script>                                    // here using jquery code for searching text to show web page
     $("document").ready(function(){
         $('#search').keyup(function(){
             var value=$(this).val().toLowerCase()
             $("#mytable tr").filter(function(){
-                $(this).toggle($(this).text().toLowerCase().indexOf(Value)>-1);
+                $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
             });
 
         });
