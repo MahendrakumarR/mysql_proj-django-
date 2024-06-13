@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mysql_curd',
     'crispy_forms',                 # Here include crispy file
-    'crispy_bootstrap5',
+    'crispy_bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,7 +137,7 @@ STATICFILES_DIR = [                                           # here configure s
     BASE_DIR / "static",         
 ]
 
-CRISPY_TEMPLATE_PACK='bootstrap5'     # here import crispy package
+CRISPY_TEMPLATE_PACK='bootstrap4'     # here import crispy package
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
