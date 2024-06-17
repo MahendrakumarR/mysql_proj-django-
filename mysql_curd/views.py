@@ -9,7 +9,7 @@ def home(request):
         return render(request,"home.html",{'data':data})
     else:
         return render(request,"home.html")
-    
+     
 
 def insert(request):
     if request.method == 'POST':
